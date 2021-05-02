@@ -28,3 +28,7 @@ Route::get('/cv-en', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
