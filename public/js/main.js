@@ -12,11 +12,18 @@ $('#dropdown').on('click', () => {
     }
 })
 
-$(document).click( () => {
+$(document).on('click', () => {
     $('#dropdown-content').hide().slideUp(300);
     $('#dropdown-arrow').css('transform', 'rotate(0deg)');
 })
 
-$('#dropdown').click( (e) => {
+$('#dropdown').on('click', (e) => {
     e.stopPropagation();
+})
+
+//Function for button to scroll down to projects
+$('#header-btn').on('click', () => {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $('#projects').offset().top
+    }, 800)
 })
