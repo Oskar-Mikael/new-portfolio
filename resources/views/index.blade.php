@@ -9,15 +9,15 @@
             <h2 class="text-gray-400 text-2xl mb-8">
                 Upcoming Fullstack Web Developer
             </h2>
-            <a
+            <a id="header-btn"
                 class="font-bold text-xl bg-green-400 py-2 px-4 rounded-md text-white cursor-pointer transition-all project-btn">See
                 my projects</a>
         </div>
     </div>
 
-    <div class="container mx-auto grid grid-cols-1 mt-16 md:grid-cols-3 text-center gap-x-12">
+    <div style="margin:4rem auto!important;" class="container justify-items-center grid grid-cols-1 text-center gap-y-12 mr-0">
 
-        <article class="min-h-20 rounded-lg min-w-15 bg-red-200 md:my-0 my-4 md:mx-0 mx-4">
+        <article class="min-h-20 rounded-lg max-w-3xl bg-red-200 md:my-0 my-4 md:mx-0">
             <img class="mx-auto my-4" src="storage/user.png" alt="user-icon" />
             <h2 class="text-2xl font-bold">
                 Who am I?
@@ -32,7 +32,7 @@
                 highest possible standard.
             </p>
         </article>
-        <article class="min-h-20 rounded-lg min-w-15 bg-yellow-200 md:my-0 my-4 md:mx-0 mx-4">
+        <article class="min-h-20 rounded-lg max-w-3xl bg-yellow-200 md:my-0 my-4 md:mx-0 mx-4">
             <img class="mx-auto my-4" src="storage/monitor.png" alt="monitor-icon" />
             <h2 class="text-2xl font-bold">
                 My interests
@@ -47,7 +47,7 @@
                 as a fullstack developer.
             </p>
         </article>
-        <article class="min-h-20 rounded-lg min-w-15 bg-green-200 md:my-0 my-4 md:mx-0 mx-4">
+        <article class="min-h-20 rounded-lg max-w-3xl bg-green-200 md:my-0 my-4 md:mx-0 mx-4">
             <img class="mx-auto my-4" src="storage/pen.png" alt="pen-icon" />
             <h2 class="text-2xl font-bold">
                 Why should you work with me?

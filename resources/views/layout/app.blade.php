@@ -53,7 +53,7 @@
     <main>
         @yield('content')
     </main>
-    <footer class="min-h-15 bg-gray-900">
+    <footer class="min-h-15 bg-gray-900 ">
         <section class="container mx-auto">
             <img src="/storage/favicon.png" class="float-right pt-32" />
             <div class="footer-info">
