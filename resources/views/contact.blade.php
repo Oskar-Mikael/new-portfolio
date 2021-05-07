@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('pageTitle', 'Contact')
 @section('content')
     <div class="container mx-auto bg-gray-200 p-8 mb-10">
         <h1 class="text-3xl pt-20 font-bold">

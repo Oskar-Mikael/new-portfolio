@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('pageTitle', 'Create')
 @section('content')
     <div class="pt-20 container mx-auto pb-96">
         Create project

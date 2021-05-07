@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('pageTitle', 'CV English')
 @section('content')
     <div class="container mx-auto pt-32 bg-gray-400 p-8 mb-12 border-black border-2">
         <a href="/storage/cv-en.pdf" download class="text-lg ">Download PDF</a>

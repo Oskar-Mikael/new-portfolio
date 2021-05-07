@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('pageTitle', 'CV')
 @section('content')
 
 

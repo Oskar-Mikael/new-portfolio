@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('pageTitle', $project->title)
 @section('content')
     <div class="container mx-auto pt-20 pb-96">
         <div class="mt-10">

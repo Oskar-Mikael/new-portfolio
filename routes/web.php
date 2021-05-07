@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
@@ -28,9 +29,7 @@ Route::get('/cv', function () {
 Route::get('/cv-en', function () {
     return view('cv-en');
 });
-Route::get('/blog', function () {
-    return view('blog');
-});
+Route::get('/blog', [BlogController::class, 'index']);
 
 Route::resource('/admin', AdminController::class);
 Route::resource('/post', PostController::class);

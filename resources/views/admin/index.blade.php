@@ -1,4 +1,5 @@
 @extends('layout.app')
+@section('pageTitle', 'Admin')
 @section('content')
     <div class="pt-20 container mx-auto pb-96">
         <h1 class="my-10 text-4xl font-bold">
@@ -34,13 +35,15 @@
                                 href="{{ route('post.show', $post->id) }}">
                                 Show
                             </a>
-                            <a class="cursor-pointer py-0.5 px-1 bg-green-300 rounded-sm">
+                            <a href="{{ route('post.edit', $post->id) }}"
+                                class="cursor-pointer py-0.5 px-1 bg-green-300 rounded-sm">
                                 Edit
                             </a>
                             <form method="POST" action="{{ route('post.destroy', $post->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Are you sure?')" class="cursor-pointer py-0.5 px-1 bg-red-300 rounded-sm">
+                                <button type="submit" onclick="return confirm('Are you sure?')"
+                                    class="cursor-pointer py-0.5 px-1 bg-red-300 rounded-sm">
                                     Delete
                                 </button>
                             </form>
@@ -80,13 +83,15 @@
                                 href="{{ route('projects.show', $project->id) }}">
                                 Show
                             </a>
-                            <a class="cursor-pointer py-0.5 px-1 bg-green-300 rounded-sm">
+                            <a href="{{ route('projects.edit', $project->id) }}"
+                                class="cursor-pointer py-0.5 px-1 bg-green-300 rounded-sm">
                                 Edit
                             </a>
                             <form method="POST" action="{{ route('projects.destroy', $project->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Are you sure?')" class="cursor-pointer py-0.5 px-1 bg-red-300 rounded-sm">
+                                <button type="submit" onclick="return confirm('Are you sure?')"
+                                    class="cursor-pointer py-0.5 px-1 bg-red-300 rounded-sm">
                                     Delete
                                 </button>
                             </form>
