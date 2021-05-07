@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +32,8 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Auth::routes();
+Route::resource('/admin', AdminController::class);
+Route::resource('/post', PostController::class);
+Route::resource('/projects', ProjectController::class);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
