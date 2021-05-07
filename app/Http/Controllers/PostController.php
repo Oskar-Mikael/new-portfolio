@@ -17,20 +17,23 @@ class PostController extends Controller
         return view('post.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        $this->validate($request, [
+        $data = request()->validate([
             'title' => 'required',
             'body' => 'required',
         ]);
 
-        $post = new Post();
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->user_id = auth()->user()->id;
+        Post::create([
+            'title' => $data['title'],
+            'body' => $data['body'],
+        ]);
 
-        auth()->user()->posts()->save($post);
+        return redirect('/admin');
+    }
 
-        return redirect('/blog');
+    public function show(Post $post)
+    {
+        return view('post.show', compact('post'));
     }
 }

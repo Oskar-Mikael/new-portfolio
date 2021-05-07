@@ -39,6 +39,17 @@ class ProjectController extends Controller
             'github_link' => $data['github_link'],
         ]);
 
-        return redirect('/');
+        return redirect('/admin');
+    }
+
+    public function show(Project $project)
+    {
+        return view('projects.show', compact('project'));
+    }
+
+    public function destroy(Project $project)
+    {
+        $project->delete();
+        return redirect('/admin');
     }
 }
