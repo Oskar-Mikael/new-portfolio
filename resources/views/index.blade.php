@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
     <div style="background-image:url('storage/desktop-setup.jpg');height:600px;background-position-y:-350px" class="w-full border-b-8 border-black
-                    ">
+                                                ">
         <div id="top" class="container mx-auto">
             <h1 class="pt-60 text-white text-7xl font-bold">
                 Oskar Boström
@@ -15,7 +15,8 @@
         </div>
     </div>
 
-    <div style="margin:4rem auto!important;" class="container justify-items-center grid grid-cols-1 text-center gap-y-12 mr-0">
+    <div style="margin:4rem auto!important;"
+        class="container justify-items-center grid grid-cols-1 text-center gap-y-12 mr-0">
 
         <article class="min-h-20 rounded-lg max-w-3xl bg-red-200 md:my-0 my-4 md:mx-0">
             <img class="mx-auto my-4" src="storage/user.png" alt="user-icon" />
@@ -64,7 +65,7 @@
     </div>
     <img style="max-width:90%;max-height:400px" src="storage/hero-img.jpg" alt="hero-img"
         class="border-black border-4 my-8 mx-auto" />
-    
+
     <article id="projects" class="bg-gradient-to-r from-green-500 to-green-300 mb-5">
         <div class="container mx-auto">
             <h2 class="text-white font-bold text-3xl pt-8">
@@ -75,6 +76,27 @@
             </p>
         </div>
     </article>
-    {{-- Projects Section (WITH BACKEND) --}}
-
+    <div class="grid md:grid-cols-2 grid-cols-1 container mx-auto mt-10 gap-x-10">
+        @foreach ($projects as $project)
+            <div class="w-full bg-gray-200 p-4 rounded-md transition-all mb-12">
+                <h3 class="text-3xl font-bold text-center">
+                    {{ $project->title }}
+                </h3>
+                <div class="flex justify-center">
+                    <img src="/storage/{{ $project->img_path }}" style="max-width:90%;max-height:360px"
+                        class=" border-4 border-black relative z-10 mt-2" />
+                </div>
+                <div class="text-center my-8">
+                    <a class="cursor-pointer text-green-800 py-1 px-2 mx-4 underline hover:no-underline border-2 border-green-400 rounded-md"
+                        href="{{ $project->github_link }}" target="_blank">
+                        Github
+                    </a>
+                    <a href="{{ route('projects.show', $project->id) }}"
+                        class="cursor-pointer text-green-800 py-1 px-2 underline hover:no-underline border-2 border-green-400 rounded-md">
+                        Read more
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 @endsection
