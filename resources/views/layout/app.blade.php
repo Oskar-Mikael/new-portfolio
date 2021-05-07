@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <nav id="navbar" class="min-h-3.5 bg-gray-700 fixed w-full z-10">
+        <nav id="navbar" class="min-h-3.5 bg-gray-700 fixed w-full z-20">
 
             <div id="hamburger">
                 <span></span>
