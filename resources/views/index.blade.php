@@ -2,7 +2,7 @@
 @section('pageTitle', 'Home')
 @section('content')
     <div style="background-image:url('storage/desktop-setup.jpg');height:600px;background-position-y:-350px" class="w-full border-b-8 border-black
-                                                ">
+                                                        ">
         <div id="top" class="container mx-auto px-4 md:px-0">
             <h1 class="pt-60 text-white text-7xl font-bold">
                 Oskar Boström
@@ -16,53 +16,84 @@
         </div>
     </div>
 
-    <div style="margin:4rem auto!important;"
-        class="container justify-items-center grid grid-cols-1 text-center gap-y-12 mr-0">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div style="margin:4rem auto!important;"
+            class="container justify-items-center grid grid-cols-1 text-center gap-y-12 mr-0">
 
-        <article class="min-h-20 rounded-lg max-w-3xl bg-red-200 md:my-0 my-4 md:mx-0 mx-4">
-            <img class="mx-auto my-4" src="storage/user.png" alt="user-icon" />
-            <h2 class="text-2xl font-bold">
-                Who am I?
-            </h2>
-            <p class="p-4 mt-2 leading-9 text-xl">
-                My name is Oskar. I have a passion for computers, programming and web development. I am
-                currently
-                studying to become a Fullstack Web developer, focusing both on front- and backend. I consider
-                myself
-                a good problem solver and a thorough person, and take good time to make sure my work lives up to
-                the
-                highest possible standard.
-            </p>
-        </article>
-        <article class="min-h-20 rounded-lg max-w-3xl bg-yellow-200 md:my-0 my-4 md:mx-0 mx-4">
-            <img class="mx-auto my-4" src="storage/monitor.png" alt="monitor-icon" />
-            <h2 class="text-2xl font-bold">
-                My interests
-            </h2>
-            <p class="p-4 mt-2 leading-9 text-xl">
-                In terms of web development, I am most interested in the backend. I enjoy working with PHP and
-                Laravel, Databases,
-                MVC applications, and APIs. This is what I would preferably become an
-                expert
-                in, while having frontend development as a secondary skill, but still enough to be able to
-                operate
-                as a fullstack developer.
-            </p>
-        </article>
-        <article class="min-h-20 rounded-lg max-w-3xl bg-green-200 md:my-0 my-4 md:mx-0 mx-4">
-            <img class="mx-auto my-4" src="storage/pen.png" alt="pen-icon" />
-            <h2 class="text-2xl font-bold">
-                Why should you work with me?
-            </h2>
-            <p class="p-4 mt-2 leading-9 text-xl">
-                I see myself as a great teamplayer, and a dedicated worker. Solving problems is what programming
-                is
-                mostly about, and I feel like my skills in solving problems are of a good character. My assets
-                would
-                be of great benefit to your team.
-            </p>
-        </article>
+            <article class="min-h-20 rounded-lg max-w-3xl bg-red-200 md:my-0 my-4 md:mx-0 mx-4">
+                <img class="mx-auto my-4" src="storage/user.png" alt="user-icon" />
+                <h2 class="text-2xl font-bold">
+                    Who am I?
+                </h2>
+                <p class="p-4 mt-2 leading-9 text-xl">
+                    My name is Oskar. I have a passion for computers, programming and web development. I am
+                    currently
+                    studying to become a Fullstack Web developer, focusing both on front- and backend. I consider
+                    myself
+                    a good problem solver and a thorough person, and take good time to make sure my work lives up to
+                    the
+                    highest possible standard.
+                </p>
+            </article>
+            <article class="min-h-20 rounded-lg max-w-3xl bg-yellow-200 md:my-0 my-4 md:mx-0 mx-4">
+                <img class="mx-auto my-4" src="storage/monitor.png" alt="monitor-icon" />
+                <h2 class="text-2xl font-bold">
+                    My interests
+                </h2>
+                <p class="p-4 mt-2 leading-9 text-xl">
+                    In terms of web development, I am most interested in the backend. I enjoy working with PHP and
+                    Laravel, Databases,
+                    MVC applications, and APIs. This is what I would preferably become an
+                    expert
+                    in, while having frontend development as a secondary skill, but still enough to be able to
+                    operate
+                    as a fullstack developer.
+                </p>
+            </article>
+            <article class="min-h-20 rounded-lg max-w-3xl bg-green-200 md:my-0 my-4 md:mx-0 mx-4">
+                <img class="mx-auto my-4" src="storage/pen.png" alt="pen-icon" />
+                <h2 class="text-2xl font-bold">
+                    Why should you work with me?
+                </h2>
+                <p class="p-4 mt-2 leading-9 text-xl">
+                    I see myself as a great teamplayer, and a dedicated worker. Solving problems is what programming
+                    is
+                    mostly about, and I feel like my skills in solving problems are of a good character. My assets
+                    would
+                    be of great benefit to your team.
+                </p>
+            </article>
 
+        </div>
+        <div class="mt-16">
+            <h2 class="text-center text-4xl font-bold">
+                Recent Blog Posts
+            </h2>
+            <div class="container mx-auto mt-8 pb-96 px-4 md:px-0">
+                @foreach ($posts as $post)
+                    <article class="bg-gray-100 w-9/12 mx-auto py-12 md:px-40 px-14 mb-14 mt-6">
+                        <h2 class="text-3xl font-bold">
+                            {{ $post->title }}
+                        </h2>
+                        <p class="text-gray-400">
+                            {{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}
+                        </p>
+                        <p class="mt-2 mb-6 text-xl">
+                            {{ \Illuminate\Support\Str::limit($post->body, 50, $end = '...') }}
+                        </p>
+                        <a class="cursor-pointer text-green-800 py-1 px-2 underline hover:no-underline border-2 border-green-400 rounded-md"
+                            href="{{ route('post.show', $post->id) }}">
+                            Read more
+                        </a>
+                    </article>
+                @endforeach
+                <div class="text-center pt-10">
+                    <a href="/blog" class="py-2 px-4 bg-blue-500 rounded-md text-2xl text-white">
+                        Read all
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <img style="max-width:90%;max-height:400px" src="storage/hero-img.jpg" alt="hero-img"
         class="border-black border-4 my-8 mx-auto" />
