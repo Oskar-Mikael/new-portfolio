@@ -7,7 +7,7 @@
                 {{ $project->title }}
             </h1>
             <p class="mt-8 text-2xl">
-                {{ $project->body }}
+                {!! nl2br(e($project->body)) !!}
             </p>
             <div class="flex justify-center mt-10">
                 <img style="max-width:90%;max-height:360px" class="max-w-90 max-h-400 border-black border-4" src="/storage/{{ $project->img_path }}" />

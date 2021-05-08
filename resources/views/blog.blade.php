@@ -1,12 +1,12 @@
 @extends('layout.app')
 @section('pageTitle', 'Blog')
 @section('content')
-    <div class="container mx-auto pt-16 pb-96">
+    <div class="container mx-auto pt-16 pb-96 px-4 md:px-0">
         <h1 class="text-4xl pt-20 font-bold">
             Blog
         </h1>
         @foreach ($posts as $post)
-            <article class="bg-gray-100 w-9/12 mx-auto py-12 px-40 my-14">
+            <article class="bg-gray-100 w-9/12 mx-auto py-12 md:px-40 px-14 my-14">
                 <h2 class="text-3xl font-bold">
                     {{ $post->title }}
                 </h2>
