@@ -54,7 +54,7 @@
         @yield('content')
     </main>
     <footer class="min-h-15 bg-gray-900 ">
-        <section class="container mx-auto">
+        <section class="container mx-auto px-4 md:px-0">
             <img src="/storage/favicon.png" class="float-right pt-32" />
             <div class="footer-info">
                 <h2 class="pt-12 mb-4 text-3xl text-white ">

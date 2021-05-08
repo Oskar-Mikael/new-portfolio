@@ -1,8 +1,9 @@
 @extends('layout.app')
+@section('pageTitle', 'Home')
 @section('content')
     <div style="background-image:url('storage/desktop-setup.jpg');height:600px;background-position-y:-350px" class="w-full border-b-8 border-black
                                                 ">
-        <div id="top" class="container mx-auto">
+        <div id="top" class="container mx-auto px-4 md:px-0">
             <h1 class="pt-60 text-white text-7xl font-bold">
                 Oskar Boström
             </h1>
@@ -18,7 +19,7 @@
     <div style="margin:4rem auto!important;"
         class="container justify-items-center grid grid-cols-1 text-center gap-y-12 mr-0">
 
-        <article class="min-h-20 rounded-lg max-w-3xl bg-red-200 md:my-0 my-4 md:mx-0">
+        <article class="min-h-20 rounded-lg max-w-3xl bg-red-200 md:my-0 my-4 md:mx-0 mx-4">
             <img class="mx-auto my-4" src="storage/user.png" alt="user-icon" />
             <h2 class="text-2xl font-bold">
                 Who am I?
@@ -67,11 +68,11 @@
         class="border-black border-4 my-8 mx-auto" />
 
     <article id="projects" class="bg-gradient-to-r from-green-500 to-green-300 mb-5">
-        <div class="container mx-auto">
+        <div class="container mx-auto px-4 md:px-0 text-center md:text-left">
             <h2 class="text-white font-bold text-3xl pt-8">
                 Projects
             </h2>
-            <p class="text-white pb-8">
+            <p class="text-white pb-8 ">
                 A collection of my completed, and still work in progress, projects.
             </p>
         </div>
