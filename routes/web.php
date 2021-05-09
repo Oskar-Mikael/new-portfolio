@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'index']);
 
+Route::get('/mail')
+
 Route::post('/contact-form', [ContactController::class, 'contactForm']);
 
 Route::get('/contact', function () {

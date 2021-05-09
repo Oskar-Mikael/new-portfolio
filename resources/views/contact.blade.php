@@ -48,7 +48,7 @@
         <h2 class="mb-4 text-xl">
             Send a message
         </h2>
-        <form class="mx-auto" action="post">
+        <form class="mx-auto" action="/contact-form" method="post">
             @csrf
             @method('POST')
             <div class="md:flex inline-block">
