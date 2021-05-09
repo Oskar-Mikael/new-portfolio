@@ -69,9 +69,9 @@
             <h2 class="text-center text-4xl font-bold">
                 Recent Blog Posts
             </h2>
-            <div class="container mx-auto mt-8 pb-96 px-4 md:px-0">
+            <div class="container mx-auto mt-8 px-4 md:px-0">
                 @foreach ($posts as $post)
-                    <article class="bg-gray-100 w-9/12 mx-auto py-12 md:px-40 px-14 mb-14 mt-6">
+                    <article class="bg-gray-100 w-9/12 mx-auto py-12 md:px-32 px-14 mb-14 mt-6">
                         <h2 class="text-3xl font-bold">
                             {{ $post->title }}
                         </h2>
@@ -79,7 +79,7 @@
                             {{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d') }}
                         </p>
                         <p class="mt-2 mb-6 text-xl">
-                            {{ \Illuminate\Support\Str::limit($post->body, 50, $end = '...') }}
+                            {{ \Illuminate\Support\Str::limit($post->body, 150, $end = '...') }}
                         </p>
                         <a class="cursor-pointer text-green-800 py-1 px-2 underline hover:no-underline border-2 border-green-400 rounded-md"
                             href="{{ route('post.show', $post->id) }}">
@@ -108,14 +108,14 @@
             </p>
         </div>
     </article>
-    <div class="grid md:grid-cols-2 grid-cols-1 container mx-auto mt-10 gap-x-10">
+    <div class="grid md:grid-cols-2 grid-cols-1 container mx-auto mt-10 gap-x-10 px-4 md:px-0">
         @foreach ($projects as $project)
             <div class="w-full bg-gray-200 p-4 rounded-md transition-all mb-12">
                 <h3 class="text-3xl font-bold text-center">
                     {{ $project->title }}
                 </h3>
                 <div class="flex justify-center">
-                    <img src="/storage/{{ $project->img_path }}" style="max-width:90%;max-height:360px"
+                    <img src="{{ $project->img_path }}" style="max-width:90%;max-height:360px"
                         class=" border-4 border-black relative z-10 mt-2" />
                 </div>
                 <div class="text-center my-8">
