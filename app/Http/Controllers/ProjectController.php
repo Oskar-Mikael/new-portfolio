@@ -30,13 +30,14 @@ class ProjectController extends Controller
         ]);
 
         if (request('img_path')) {
-            $imagePath = request('img_path')->store('project_images', 'public');
+            $imagePath = request('img_path')->store('project_images', 's3');
+            Storage::disk('s3')->setVisibility($imagePath, 'public');
         }
 
         Project::create([
             'title' => $data['title'],
             'body' => $data['body'],
-            'img_path' => $imagePath,
+            'img_path' => Storage::disk('s3')->url($imagePath),
             'github_link' => $data['github_link'],
         ]);
 
@@ -70,14 +71,15 @@ class ProjectController extends Controller
             }
         }
 
-        if (request('img_path')) {
-            $imagePath = request('img_path')->store('project_images', 'public');
+         if (request('img_path')) {
+            $imagePath = request('img_path')->store('project_images', 's3');
+            Storage::disk('s3')->setVisibility($imagePath, 'public');
         }
 
         $project->update([
             'title' => $data['title'],
             'body' => $data['body'],
-            'img_path' => $imagePath,
+            'img_path' => Storage::disk('s3')->url($imagePath),
             'github_link' => $data['github_link'],
         ]);
 
