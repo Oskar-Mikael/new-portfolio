@@ -14,7 +14,7 @@
                     {{ \Carbon\Carbon::parse($post->created_at)->format('Y-m-d')}}
                 </p>
                 <p class="mt-2 mb-6 text-xl">
-                    {{ \Illuminate\Support\Str::limit($post->body, 50, $end = '...') }}
+                    {{ \Illuminate\Support\Str::limit($post->body, 150, $end = '...') }}
                 </p>
                 <a class="cursor-pointer text-green-800 py-1 px-2 underline hover:no-underline border-2 border-green-400 rounded-md" href="{{ route('post.show', $post->id) }}">
                     Read more
