@@ -27,3 +27,21 @@ $('#header-btn').on('click', () => {
         scrollTop: $('#projects').offset().top
     }, 800)
 })
+
+window.onscroll = () => { displayScrollButton() };
+
+//Function for hiding and showing scroll-top button
+function displayScrollButton() {
+    if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+        $('#scroll-top').css('right', '10px')
+    } else {
+        $('#scroll-top').css('right', '-100px')
+    }
+}
+
+//Function for button to scroll to top
+$('#scroll-top').on('click', () => {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $('#top').offset().top
+    }, 800)
+})

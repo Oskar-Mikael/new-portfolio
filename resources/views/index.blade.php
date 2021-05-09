@@ -2,7 +2,7 @@
 @section('pageTitle', 'Home')
 @section('content')
     <div style="background-image:url('storage/desktop-setup.jpg');height:600px;background-position-y:-350px" class="w-full border-b-8 border-black
-                                                        ">
+                                                            ">
         <div id="top" class="container mx-auto px-4 md:px-0">
             <h1 class="pt-60 text-white text-7xl font-bold">
                 Oskar Boström
@@ -97,7 +97,7 @@
     </div>
     <img style="max-width:90%;max-height:400px" src="storage/hero-img.jpg" alt="hero-img"
         class="border-black border-4 my-8 mx-auto" />
-
+    <button id="scroll-top" class="fixed z-30 bottom-5 outline-none bg-gray-500 text-white rounded-lg transition-all p-2" style="right:-100px"><img alt="up-arrow" style="max-width:70%;height:50px " class="mx-auto" id="arrow-img" src="/storage/up-arrow.png"> </button>
     <article id="projects" class="bg-gradient-to-r from-green-500 to-green-300 mb-5">
         <div class="container mx-auto px-4 md:px-0 text-center md:text-left">
             <h2 class="text-white font-bold text-3xl pt-8">
