@@ -48,7 +48,9 @@
         <h2 class="mb-4 text-xl">
             Send a message
         </h2>
-        <form class="mx-auto" >
+        <form class="mx-auto" action="post">
+            @csrf
+            @method('POST')
             <div class="md:flex inline-block">
                 <input type="text" required placeholder="Name" name="name" class="text-white bg-gray-300 text-xl mx-4 rounded-md md:my-0 my-4 pl-4 w-full md:w-1/2 h-14">
                 <input type="email" required placeholder="Email" name="email" class="text-white bg-gray-300 text-xl mx-4 rounded-md md:my-0 my-4 pl-4 w-full md:w-1/2 h-14">
@@ -56,5 +58,10 @@
             <textarea class="mt-6 h-64 w-full text-white bg-gray-300 text-xl mx-4 rounded-md pl-4 resize-none pt-6" name="message" required placeholder="Message"></textarea>
             <button class="mt-12 text-center flex mx-auto text-green-400 cursor-pointer border-green-400 border-2 px-2 py-4 text-3xl font-bold rounded-sm" type="submit">Send</button>
         </form>
+        @if(Session::has('success'))
+        <div class="text-center mt-10 text-green-500 text-2xl">
+            {{Session::get('success')}}
+        </div>
+    @endif
     </div>
 @endsection
